@@ -1,0 +1,38 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: oauth2-demos
+  security:
+    oauth2:
+      client:
+        registration:
+          github:
+            client-id: Ov23liqIOGVF8MVk7f1g
+            client-secret: ab288a4345c1e3bb110e459b0470eb7a89536f9f
+            scope: read:user,user:email
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            client-name: Github
+        provider:
+          github:
+            authorization-uri: https://github.com/login/oauth/authorize
+            token-uri: https://github.com/login/oauth/access_token
+            user-info-uri: https://api.github.com/user
+            user-name-attribute: id
+
+#    oauth2:
+#      client:
+#        registration:
+#          github:
+#            client-id: Ov23liqIOGVF8MVk7f1g
+#            client-secret: ab288a4345c1e3bb110e459b0470eb7a89536f9f
+#            scope: read:user,user:email
+#            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+#            client-name: OAuth2 Demo
+#        provider:
+#          github:
+#            authorization-uri: https://github.com/login/oauth/authorize
+#            token-uri: https://github.com/login/oauth/access_token
+#            user-info-uri: https://api.github.com/user
+#            user-name-attribute: id
