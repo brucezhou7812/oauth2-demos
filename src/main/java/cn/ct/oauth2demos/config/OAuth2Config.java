@@ -16,7 +16,8 @@ public class OAuth2Config {
                         .requestMatchers("/", "/public").permitAll()
                         .anyRequest().authenticated()
                 )
-                .oauth2Login(Customizer.withDefaults());
+                .oauth2Login(Customizer.withDefaults())
+                .logout(logout->logout.logoutSuccessUrl("/").permitAll());
         return http.build();
 
     }

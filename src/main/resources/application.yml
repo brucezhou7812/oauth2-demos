@@ -14,12 +14,23 @@ spring:
             scope: read:user,user:email
             redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
             client-name: Github
+          google:
+            client-id: 77230655860-rqt6ffk6544fc0l12h4ouo6eip102jvm.apps.googleusercontent.com
+            client-secret: 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
+            scope: openid, profile, email
+            redirect-uri: "{baseUrl}/login/oauth2/code/{registrationId}"
+            client-name: Google
         provider:
           github:
             authorization-uri: https://github.com/login/oauth/authorize
             token-uri: https://github.com/login/oauth/access_token
             user-info-uri: https://api.github.com/user
             user-name-attribute: id
+          google:
+            authorization-uri: https://accounts.google.com/o/oauth2/v2/auth?prompt=consent
+            token-uri: https://www.googleapis.com/oauth2/v4/token
+            user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+            user-name-attribute: sub
 
 #    oauth2:
 #      client:
